@@ -1,0 +1,24 @@
+plugins {
+    id 'java'
+}
+
+group = 'ru.psolokha'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation (
+            platform('org.junit:junit-bom:5.10.2'),
+            'org.junit.jupiter:junit-jupiter',
+            'com.codeborne:selenide:7.2.2',
+            'org.slf4j:slf4j-simple:2.0.12'
+    )
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher:1.10.2'
+}
+
+test {
+    useJUnitPlatform()
+}
