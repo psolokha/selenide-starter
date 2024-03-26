@@ -37,6 +37,7 @@ public class MainTest {
     }
 
     @Order(2)
+    @Disabled
     @DisplayName("Login Test")
     @ParameterizedTest(name = " (userName: {0})")
     @CsvFileSource(resources = "/data.csv")

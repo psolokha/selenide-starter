@@ -6,6 +6,11 @@ plugins {
 group = 'ru.psolokha'
 version = '1.0-SNAPSHOT'
 
+tasks.withType(JavaCompile).configureEach {
+    options.release = 21
+    options.encoding = "UTF-8"
+}
+
 repositories {
     mavenCentral()
 }
@@ -37,6 +42,7 @@ dependencies {
 }
 
 test {
+    defaultCharacterEncoding = "UTF-8"
     systemProperty 'allure.results.directory', 'build/allure-results'
     jvmArgs = [ "-javaagent:${configurations.aspectJAgent.singleFile}" ]
     useJUnitPlatform()
